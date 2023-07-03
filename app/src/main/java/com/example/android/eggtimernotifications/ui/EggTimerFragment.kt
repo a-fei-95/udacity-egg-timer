@@ -60,7 +60,6 @@ class EggTimerFragment : Fragment() {
     }
 
     private fun createChannel(channelId: String, channelName: String) {
-        // TODO: Step 1.6 START create a channel
         val notificationChannel = NotificationChannel(
             channelId,
             channelName,
