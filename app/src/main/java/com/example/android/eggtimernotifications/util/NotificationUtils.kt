@@ -30,7 +30,6 @@ import com.example.android.eggtimernotifications.receiver.SnoozeReceiver
 // Notification ID.
 private const val NOTIFICATION_ID = 0
 private const val REQUEST_CODE = 0
-private const val FLAGS = 0
 
 /**
  * Builds and delivers the notification.
@@ -83,6 +82,7 @@ fun NotificationManager.sendNotification(messageBody: String, applicationContext
             applicationContext.getString(R.string.snooze),
             snoozePendingIntent
         )
+        .setPriority(NotificationCompat.PRIORITY_HIGH)
 
     // TODO: Step 2.5 set priority
 
