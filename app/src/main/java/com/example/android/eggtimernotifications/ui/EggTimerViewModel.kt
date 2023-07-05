@@ -31,7 +31,6 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.example.android.eggtimernotifications.R
 import com.example.android.eggtimernotifications.receiver.AlarmReceiver
-import com.example.android.eggtimernotifications.util.cancelNotifications
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
@@ -120,7 +119,7 @@ class EggTimerViewModel(private val app: Application) : AndroidViewModel(app) {
                 _alarmOn.value = true
                 val selectedInterval = when (timerLengthSelection) {
                     0 -> second * 5 //For testing only
-                    else ->timerLengthOptions[timerLengthSelection] * minute
+                    else -> timerLengthOptions[timerLengthSelection] * minute
                 }
                 val triggerTime = SystemClock.elapsedRealtime() + selectedInterval
 
@@ -128,7 +127,7 @@ class EggTimerViewModel(private val app: Application) : AndroidViewModel(app) {
                     NotificationManager::class.java
                 ) as NotificationManager
 
-                notificationManager.cancelNotifications()
+                notificationManager.cancelAll()
 
                 AlarmManagerCompat.setExactAndAllowWhileIdle(
                     alarmManager,
