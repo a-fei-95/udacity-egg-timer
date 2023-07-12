@@ -84,7 +84,5 @@ fun NotificationManager.sendNotification(messageBody: String, applicationContext
         )
         .setPriority(NotificationCompat.PRIORITY_HIGH)
 
-    // TODO: Step 2.5 set priority
-
     notify(NOTIFICATION_ID, builder.build())
 }
